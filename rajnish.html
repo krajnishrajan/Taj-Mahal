@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Tribute to the Taj Mahal</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            color: #2c3e50;
+            overflow-x: hidden;
+            background-image: url('https://i.gifer.com/embedded/download/W13Z.gif');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(71, 108, 142, 0.6);
+            border: 3px solid #6c7a89;
+        }
+        
+        /* Floating motifs */
+        .motif {
+            position: fixed;
+            pointer-events: none;
+            animation: float 6s ease-in-out infinite;
+            z-index: 1;
+            font-size: 24px;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            50% { transform: translateY(-100px) rotate(20deg); opacity: 0.7; }
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #476c8e, #6c7a89);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+            border-radius: 0 0 20px 20px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 5px double white;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://i.gifer.com/origin/3c/3c0a2c0a2b5e5e5e5e5e5e5e5e5e5e5.gif') center/cover;
+            opacity: 0.1;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 4.5rem;
+            margin: 0;
+            font-family: 'Georgia', serif;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(45deg, #1f4068, #476c8e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding: 0 20px;
+            display: inline-block;
+            border-radius: 50px;
+            animation: none; /* Removed glow effect */
+        }
+        
+        .subtitle {
+            font-size: 1.8rem;
+            font-style: italic;
+            margin-top: 15px;
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+            background: rgba(71, 108, 142, 0.5);
+            padding: 10px 20px;
+            border-radius: 30px;
+            display: inline-block;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: rgba(71, 108, 142, 0.95);
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0 20px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: all 0.4s;
+            background: rgba(255, 255, 255, 0.25);
+            font-size: 1.1rem;
+            display: inline-block;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.15) rotate(0deg);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 4rem 0;
+        }
+        
+        section {
+            margin-bottom: 4rem;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(71, 108, 142, 0.4);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #b0c4de;
+        }
+        
+        section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://i.gifer.com/1B9Z.gif') center/cover;
+            opacity: 0.08;
+            z-index: 1;
+        }
+        
+        section > * {
+            position: relative;
+            z-index: 2;
+        }
+        
+        h2 {
+            color: #1f4068;
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 2.5rem;
+            font-family: 'Georgia', serif;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #1f4068, #476c8e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding: 0 30px;
+            display: inline-block;
+        }
+        
+        p {
+            font-size: 1.2rem;
+            line-height: 1.9;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.6s;
+            aspect-ratio: 1/1;
+            border: 3px solid #476c8e;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.08) rotate(3deg);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.15);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(71, 108, 142, 0.95), transparent);
+            color: white;
+            padding: 25px 15px 15px;
+            text-align: center;
+            transform: translateY(100%);
+            transition: transform 0.6s;
+            font-size: 1.1rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        /* Key Dates Section */
+        .story-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 40px;
+            position: relative;
+        }
+        
+        .story-timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #476c8e, #1f4068);
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        
+        .story-event {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(71, 108, 142, 0.3);
+            position: relative;
+            z-index: 2;
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: left;
+            border: 2px solid #b0c4de;
+        }
+        
+        .story-event::before {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: #476c8e;
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+        }
+        
+        .story-event-content {
+            position: relative;
+            z-index: 4;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+        }
+        
+        .story-date {
+            font-weight: bold;
+            color: #1f4068;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .story-date i {
+            font-size: 1.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1f4068, #476c8e);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+            margin-top: 4rem;
+            border-radius: 20px 20px 0 0;
+            position: relative;
+            border-top: 5px double white;
+        }
+        
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://i.gifer.com/origin/3c/3c0a2c0a2b5e5e5e5e5e5e5e5e5e5e5.gif') center/cover;
+            opacity: 0.1;
+            z-index: 1;
+        }
+        
+        footer p {
+            position: relative;
+            z-index: 2;
+            margin: 15px 0;
+            font-size: 1.3rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .footer-logo {
+            color: #ffeb3b;
+            font-size: 2.5rem;
+            animation: none; /* Removed heartbeat effect */
+            display: inline-block;
+            text-shadow: 0 0 10px rgba(255, 235, 59, 0.7);
+            margin: 0 10px;
+        }
+        
+        .footer-message {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 20px auto;
+            max-width: 800px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.4rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 10px 0;
+            }
+            
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            section {
+                padding: 2rem;
+            }
+            
+            .story-timeline::before {
+                left: 20px;
+            }
+            
+            .story-event {
+                margin-left: 60px;
+                text-align: left;
+            }
+            
+            .story-event::before {
+                left: -45px;
+                top: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="motifs-container"></div>
+    
+    <header>
+        <div class="container">
+            <h1>The Taj Mahal: A Mausoleum of Love 🕌</h1>
+            <p class="subtitle">A Symbol of Mughal Architecture and Historical Significance</p>
+            <div style="margin-top: 20px;">
+                <span style="font-size: 2rem;">🇮🇳</span>
+                <span style="font-size: 2.5rem;">👑</span>
+                <span style="font-size: 3rem;">💎</span>
+                <span style="font-size: 2.5rem;">📜</span>
+                <span style="font-size: 2rem;">🕌</span>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#home">Introduction 📜</a></li>
+            <li><a href="#gallery">Architecture 🏛️</a></li>
+            <li><a href="#history">Historical Context ⏳</a></li>
+            <li><a href="#construction">Construction 👷</a></li>
+            <li><a href="#legacy">Legacy 🌍</a></li>
+        </ul>
+    </nav>
+    
+    <div class="main-content container">
+        <section id="home">
+            <h2>Introduction to the Monumental Marvel 🕌</h2>
+            <div style="text-align: center; margin-bottom: 40px;">
+                <img src="taj mahal.jpeg" alt="Taj Mahal" style="max-width: 80%; border-radius: 20px; border: 5px solid #6c7a89;">
+            </div>
+            <p style="font-size: 1.3rem; text-align: center;">The Taj Mahal is an ivory-white marble mausoleum on the south bank of the Yamuna river in the Indian city of Agra. It was commissioned in 1631 by the Mughal emperor, Shah Jahan, to house the tomb of his favorite wife, Mumtaz Mahal. The monument is widely considered one of the most beautiful examples of Mughal architecture, a style that combines elements from Persian, Indian, and Islamic traditions.</p>
+        </section>
+        
+        <section id="gallery">
+            <h2>Architectural Details 🏛️</h2>
+            <p style="text-align: center; font-size: 1.2rem;">The Taj Mahal complex is a masterpiece of design, showcasing perfect symmetry and intricate craftsmanship.</p>
+            
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="intricate carvings.png" alt="Intricate Carvings">
+                    <div class="gallery-caption">Intricate marble carvings and pietra dura inlays.</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="reflection.jpg" alt="Water reflection">
+                    <div class="gallery-caption">The iconic reflection pool, a symbol of perfect symmetry.</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="minarets.jpg" alt="Minarets">
+                    <div class="gallery-caption">The four minarets frame the central dome, designed to lean slightly outward.</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="maingate.jpg" alt="Main Gateway">
+                    <div class="gallery-caption">The Darwaza-i Rauza (main gateway), a grand entrance.</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="calligraphy.jpg" alt="Calligraphy">
+                    <div class="gallery-caption">The text on the walls of Taj Mahal is written in thuluth script.</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Architecture.jpg" alt="Architecture">
+                    <div class="gallery-caption">The Taj Mahal is built in Mughal architecture style.</div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="history" class="distance-info">
+            <h2>Historical Context ⏳</h2>
+            <p style="font-size: 1.3rem;">The Taj Mahal was constructed during a period of immense wealth and artistic flourishing under the Mughal Empire. It serves as a tribute to the deep love of Emperor Shah Jahan for his wife, Mumtaz Mahal, who died giving birth to their 14th child.</p>
+            
+            <p style="font-size: 1.3rem;">The structure represents not only a mausoleum but also a testament to Shah Jahan's political power and artistic patronage. He envisioned it as a paradise on Earth, combining Islamic, Hindu, and Persian aesthetics to create a unique and timeless monument.</p>
+            
+            <div style="text-align: center; margin: 40px 0;">
+                <img src="6.jpg" alt="Mughal era" style="max-width: 50%; border-radius: 20px; border: 3px solid #b0c4de;">
+                <p style="font-style: italic; margin-top: 15px; font-size: 1.2rem;">An era of opulence and artistic brilliance 👑</p>
+            </div>
+        </section>
+        
+        <section id="construction" class="our-story">
+            <h2>The Construction Process 👷</h2>
+            <p style="text-align: center; font-size: 1.3rem;">Building the Taj Mahal was a monumental task, involving thousands of artisans and laborers from across Asia and Europe.</p>
+            
+            <div class="story-timeline">
+                <div class="story-event">
+                    <div class="story-event-content">
+                        <div class="story-date"><i>📅</i> 1631</div>
+                        <p>Shah Jahan begins construction of the Taj Mahal following the death of his wife, Mumtaz Mahal.</p>
+                    </div>
+                </div>
+                
+                <div class="story-event">
+                    <div class="story-event-content">
+                        <div class="story-date"><i>👷</i> 1653</div>
+                        <p>The main mausoleum is completed after more than 20,000 workers and a massive workforce of elephants and oxen are used to transport materials. It cost an estimated 32 million rupees to build.</p>
+                    </div>
+                </div>
+                
+                <div class="story-event">
+                    <div class="story-event-content">
+                        <div class="story-date"><i>💎</i> Materials & Workforce</div>
+                        <p>White marble was brought from Makrana, Rajasthan. Red sandstone came from Fatehpur Sikri. Precious and semi-precious stones were sourced from all over the world, including jade from China and lapis lazuli from Afghanistan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="legacy" class="love-letter">
+            <h2>Enduring Legacy 🌍</h2>
+            <p>Today, the Taj Mahal is a UNESCO World Heritage site and attracts millions of visitors each year. It is a testament to human artistic achievement and a global symbol of eternal love. Its majestic beauty and historical significance make it one of the most recognized and celebrated structures in the world.</p>
+            
+            <p>The monument's message of love, though originally from a specific historical context, has transcended time and culture. It serves as a reminder of how art and architecture can immortalize human emotions and connect us across generations.</p>
+            
+            <p style="text-align: right; font-style: italic; margin-top: 40px;">
+                A presentation by,<br>
+                <span style="font-size: 1.3rem; color: #1f4068;">Rajnish 🎓</span>
+            </p>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <img src="construction.png" alt="Taj Mahal" style="max-width: 200px;">
+                <p style="font-style: italic; margin-top: 15px;">A symbol that transcends time and space 💫</p>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-message">
+                <p style="font-size: 1.5rem; margin-bottom: 20px; color: black;"><span class="footer-logo">🕌</span> Thank you for your attention <span class="footer-logo">🕌</span></p>
+                <p style="font-size: 1.3rem; color: black;">"Not a piece of architecture, as other buildings are, but the proud passion of an emperor's love wrought in living stones."</p>
+                <p style="font-size: 1.1rem; margin-top: 20px; color: black;">- Sir Edwin Arnold</p>
+            </div>
+            <p style="margin-top: 30px; font-size: 1.5rem; color: #2c3e50;">📜 💎 🏛️ 👑 </p>
+        </div>
+    </footer>
+    
+    <script>
+        // Create floating motifs (repurposed from hearts)
+        function createMotifs() {
+            const motifsContainer = document.getElementById('motifs-container');
+            const motifSymbols = ['🕌', '💎', '📜', '👑', '*'];
+            
+            for (let i = 0; i < 50; i++) {
+                const motif = document.createElement('div');
+                motif.classList.add('motif');
+                motif.innerHTML = motifSymbols[Math.floor(Math.random() * motifSymbols.length)];
+                motif.style.color = `hsl(210, 100%, ${Math.random() * 30 + 60}%)`;
+                motif.style.left = Math.random() * 100 + 'vw';
+                motif.style.top = Math.random() * 100 + 'vh';
+                motif.style.fontSize = (Math.random() * 30 + 20) + 'px';
+                motif.style.animationDuration = (Math.random() * 8 + 4) + 's';
+                motif.style.animationDelay = (Math.random() * 5) + 's';
+                motifsContainer.appendChild(motif);
+            }
+        }
+               
+        // Initialize everything
+        window.onload = function() {
+            createMotifs();
+        };
+    </script>
+</body>
+</html>
